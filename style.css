@@ -1,0 +1,181 @@
+/* ---------- Colors (change these to change the whole look) ---------- */
+:root {
+  --pink: #d9547f;
+  --light-pink: #f4b6cc;
+  --green: #46594f;
+  --brown: #7a5446;
+  --paper: #f6f3f1;
+}
+
+* { box-sizing: border-box; }
+
+/* pink and white stripes, like the card */
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  color: var(--green);
+  background: repeating-linear-gradient(90deg, #e8719b 0 30px, #ffffff 30px 60px);
+}
+
+/* the cream panel in the middle */
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 0 1.5rem 2rem;
+  background: var(--paper);
+  border-radius: 40px 40px 0 0;
+}
+
+/* ---------- Header ---------- */
+header {
+  text-align: center;
+  padding-top: 4.5rem;
+  position: relative;
+}
+
+.bow {
+  position: absolute;
+  top: 1.3rem;
+  left: 50%;
+  width: 150px;
+  margin-left: -75px;
+  z-index: 2;
+}
+
+/* dotted border = the pearl wreath */
+.oval {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 4rem 3rem 3rem;
+  border: 8px dotted var(--brown);
+  border-radius: 50%;
+}
+
+h1 {
+  margin: 0 0 0.8rem;
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1;
+}
+.merry { display: block; color: var(--pink); font-size: clamp(1.6rem, 5vw, 2.4rem); }
+.christmas { display: block; color: var(--green); font-size: clamp(2.4rem, 9vw, 4.2rem); }
+
+.intro {
+  margin: 0 auto;
+  max-width: 34ch;
+  color: var(--pink);
+  font-size: 0.95rem;
+}
+
+#count { margin: 1.5rem 0 0; color: var(--brown); font-weight: 600; }
+
+/* ---------- Grid of items ---------- */
+#grid {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 2px solid var(--light-pink);
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  padding: 1rem;
+  background: #fff;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+  padding: 0 1.1rem 1.2rem;
+}
+
+.name { margin: 0; font-size: 1rem; line-height: 1.3; }
+.note { margin: 0; font-size: 0.85rem; color: var(--brown); }
+.price { margin: 0; font-size: 1.2rem; font-weight: 700; color: var(--pink); }
+
+.pills { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.pills:empty { display: none; }
+.pill {
+  padding: 0.15rem 0.65rem;
+  border: 1px solid var(--light-pink);
+  border-radius: 999px;
+  color: var(--brown);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.links { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+.links a {
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  background: #fde8f0;
+  color: var(--pink);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.links a:hover { background: var(--pink); color: #fff; }
+
+button {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--pink);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+button:hover { background: #bf3f6a; }
+
+/* ---------- When something is already bought ---------- */
+.card.bought img { filter: grayscale(1); opacity: 0.4; }
+.card.bought .name { text-decoration: line-through; }
+.card.bought button { background: transparent; color: var(--brown); border: 2px solid var(--light-pink); font-weight: 600; font-size: 0.85rem; }
+.card.bought button:hover { background: #fde8f0; }
+
+.tag {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  background: var(--green);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.card.bought .tag { display: block; }
+
+#message { text-align: center; color: var(--brown); }
+footer { text-align: center; color: var(--pink); font-weight: 600; margin-top: 2rem; }
+
+a:focus-visible, button:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+
+/* smaller screens */
+@media (max-width: 600px) {
+  .oval { padding: 3.5rem 1.5rem 2.5rem; }
+}
+
+.about {
+  max-width: 520px;
+  margin: 1.5rem auto 0;
+}
