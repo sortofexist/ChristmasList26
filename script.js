@@ -107,17 +107,7 @@ const ITEMS = [
 ];
 
 
-/* =====================================================================
-   SHARED "BOUGHT" STORAGE
-   Paste your Firebase database URL between the quotes so everyone sees
-   the same bought items. Example:
-   "https://my-wishlist-default-rtdb.firebaseio.com"
-
-   If you leave it empty, bought items are only saved in YOUR browser
-   (fine for testing, but other people won't see them).
-   ===================================================================== */
-
-const DATABASE_URL = "";
+const DATABASE_URL = "https://christmaslist26-77972-default-rtdb.firebaseio.com/";
 
 
 /* ---------------------------------------------------------------------
